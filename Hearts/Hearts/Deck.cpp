@@ -46,3 +46,11 @@ void Deck::shuffle(int number)
 	}
 
 }
+
+Card Deck::deal()
+{
+	Card card;
+	card = deck[0];
+	deck.erase(deck.begin());
+	return card;
+}

@@ -12,9 +12,10 @@ Deck::Deck()
 			{
 				
 				Card newCard(static_cast<Value>(j), static_cast<Suit>(i));
-				deck.at(card) = newCard;
+				deck.push_back(newCard);
 				card++;
 			}
 		}
 	}
+}	
 }	

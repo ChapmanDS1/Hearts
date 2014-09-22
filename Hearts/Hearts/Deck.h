@@ -5,7 +5,7 @@ using std::vector;
 class Deck{
 public:
 	Deck();
-	void shuffle();
+	void shuffle(int number);
 	Card deal();
 
 private:

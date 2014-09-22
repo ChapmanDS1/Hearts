@@ -18,4 +18,31 @@ Deck::Deck()
 		}
 	}
 }	
-}	
+	
+
+void Deck::shuffle(int number)
+{
+	vector<Card> deck1 = deck;
+
+	int x = 0;
+	while(x <number)
+	{
+		int counter = 0;
+		for(int i = 0; i < number_of_cards; i +=2)
+		{
+			
+			deck[counter] = deck1[i];
+			counter++;
+			
+		}
+		for(int i = 1; i < number_of_cards; i+=2)
+		{
+			
+			deck[counter] = deck1[i];
+			counter++;
+		}
+		x++;
+		deck1 = deck;
+	}
+
+}

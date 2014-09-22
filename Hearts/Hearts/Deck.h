@@ -9,7 +9,7 @@ using std::time;
 class Deck{
 public:
 	Deck();
-	void shuffle(int number);  // number = The number of times to run the shuffle algorithm (3-5 works well) Although the more you run it the more varied it gets
+	void shuffle(int number);  // number = The number of times to run the shuffle algorithm. The higher the number the more swaps occur.
 	Card deal();
 
 private:

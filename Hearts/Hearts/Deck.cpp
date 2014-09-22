@@ -22,9 +22,10 @@ Deck::Deck()
 
 void Deck::shuffle(int number)
 {
+	//Seeds the random number generator
 	srand(time(NULL));
-	vector<Card> deck1 = deck;
 
+	vector<Card> deck1 = deck;
 	int x = 0;
 	while(x <number)
 	{

@@ -10,7 +10,7 @@ class Deck{
 public:
 	Deck();
 	void shuffle(int number);  // number = The number of times to run the shuffle algorithm. The higher the number the more swaps occur.
-	Card deal();
+	vector<Card> deal(); 
 
 private:
 	int const number_of_cards = 52;

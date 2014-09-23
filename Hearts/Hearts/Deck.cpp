@@ -66,10 +66,15 @@ void Deck::shuffle(int number)
 
 }
 
-Card Deck::deal()
+//Assumes that its dealing 13 cards for a 4 person game
+vector<Card> Deck::deal()
 {
-	Card card;
-	card = deck[0];
-	deck.erase(deck.begin());
-	return card;
+	vector<Card> hand;
+	for(int i = 0;i<(number_of_cards/4); i++)
+	{
+		hand.push_back(deck.begin);
+		deck.erase(deck.begin());
+	}
+
+	return hand;
 }

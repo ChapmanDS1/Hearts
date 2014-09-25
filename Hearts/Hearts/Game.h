@@ -19,5 +19,7 @@ private:
 	void playHand(); // Called indefinitely by playGame() until the game is over. setsup the deck and deals out hands
 					 // sets areHeartsBroken to false. Keeps playing until all players are out of cards 
 					 // and then adds points to each player according to how many points they've won. Checks also to see if any player shot the moon
+	bool searchFor2ofClubs(Computer computer);
+	bool searchFor2ofClubs(Player player);
 };
 

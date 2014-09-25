@@ -15,6 +15,7 @@ public:
 	Card play_a_card( vector<Card> trick, bool areHeartsBroken);
 	bool playsFirst;
 	Player();
+	void addCardToHand(vector<Card> cards);
 
 private:
 	int card_to_play;

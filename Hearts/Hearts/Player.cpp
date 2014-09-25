@@ -68,3 +68,9 @@ Card Player::play_a_card(vector<Card> trick, bool areHeartsBroken)
 }
 
 
+void Player::addCardToHand(vector<Card> cards)
+{
+	hand = cards;
+
+	return;
+}

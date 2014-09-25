@@ -8,6 +8,7 @@ class Computer
 public:
 	Computer();
 	Card playCard(vector<Card> trick);
+	void addCardToHand(vector<Card> cards);
 private:
 	vector<Card> hand;
 };

@@ -36,3 +36,10 @@ Card Computer::playCard(vector<Card> trick)
 	hand.erase[0];
 	return play;
 }
+
+void Computer::addCardToHand(vector<Card> cards)
+{
+	hand = cards;
+
+	return;
+}

@@ -8,10 +8,9 @@ using std::vector;
 
 Game::Game()
 {
-	Deck deck;
-	Player player1;
-	Computer computer1, computer2, computer3;
+	deck.shuffle(10);
 	bool isGameOver = false;
+	bool areHeartsBroken = false;
 }
 
 void Game::playGame()

@@ -13,6 +13,6 @@ public:
 	vector<Card> deal(); 
 
 private:
-	int const number_of_cards = 52;
+	static int const number_of_cards = 52;
 	vector<Card> deck;
 };

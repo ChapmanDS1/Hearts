@@ -1,17 +1,11 @@
 #include "Player.h"
-#include "Deck.h"
-#include "Game.h"
-#include <iostream>
-using std::cout;
-using std::endl;
-using std::cin;
 
 void Player::display_hand()
 {
 	cout << "Your hand is: " << endl;
-	for (int i = 1; i < hand.size() + 1; i++)
+	for (size_t i = 1; i < hand.size() + 1; i++)
 	{
-		cout << i << ". " << hand[i].getValue << " of " << hand[i].getSuit << endl;
+		cout << i << ". " << hand[i].getValue() << " of " << hand[i].getSuit() << endl;
 	}
 	cout << endl;
 }
@@ -19,30 +13,30 @@ void Player::display_hand()
 void Player::display_played_cards(vector<Card> trick)
 {
 	cout << "The card(s) that have been played are: " << endl;
-	for (int i = 0; i < trick.size(); i++)	// need to get the trick vector from the game class 
+	for (size_t i = 0; i < trick.size(); i++)	// need to get the trick vector from the game class 
 	{
-		cout << trick[i].getValue << " of " << trick[i].getSuit << endl;
+		cout << trick[i].getValue() << " of " << trick[i].getSuit() << endl;
 	}
 }
 
-bool Player::card_is_good(int card_to_play, vector<Card> trick)
+bool Player::card_is_good(int card_to_play, vector<Card> trick, bool heartsAreBroken)
 {
-	if (hand[card_to_play].getSuit == trick[0].getSuit)
+	if (hand[card_to_play].getSuit() == trick[0].getSuit())
 		return true;
 
 	if ((trick.size() == 0) && (!heartsAreBroken) && hand[card_to_play].suitName == "heart" )
 		return false; 
 
-	for (int i = 0; i < hand.size(); i++)
+	for (size_t i = 0; i < hand.size(); i++)
 	{
-		if(hand[i].getSuit == trick[0].getSuit)
+		if(hand[i].getSuit == trick[0].getSuit())
 			return false;
 	}
 
 	return true; 
 }
 
-Card Player::play_a_card(vector<Card> trick)
+Card Player::play_a_card(vector<Card> trick, bool areHeartsBroken)
 {
 	display_hand();
 	display_played_cards(trick);
@@ -54,7 +48,7 @@ Card Player::play_a_card(vector<Card> trick)
 		cin >> card_to_play;
 		card_to_play--;
 
-		if(card_is_good(card_to_play, trick))
+		if(card_is_good(card_to_play, trick, areHeartsBroken))
 		{
 		return hand[card_to_play];
 		}

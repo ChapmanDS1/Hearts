@@ -7,7 +7,7 @@ class Game
 public:
 	Game(); //Setups the deck, and player objects, and initializes isGameOver to false
 	void playGame();//Calls the playHand function in a loop until a player gets over 100 points.
-	
+	// vector<Card> trick; ?
 					 
 
 private:

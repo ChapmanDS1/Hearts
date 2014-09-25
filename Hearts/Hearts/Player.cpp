@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "Deck.h"
+#include "Game.h"
 #include <iostream>
 using std::cout;
 using std::endl;
@@ -28,6 +29,9 @@ bool Player::card_is_good(int card_to_play, vector<Card> trick)
 {
 	if (hand[card_to_play].getSuit == trick[0].getSuit)
 		return true;
+
+	if ((trick.size() == 0) && (!heartsAreBroken) && hand[card_to_play].suitName == "heart" )
+		return false; 
 
 	for (int i = 0; i < hand.size(); i++)
 	{

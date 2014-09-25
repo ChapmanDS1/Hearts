@@ -47,14 +47,14 @@ Card Player::play_a_card(vector<Card> trick)
 	display_hand();
 	display_played_cards(trick);
 
-	cout << "Which card would you like to play?" << endl;
 	
 	do
 	{
+		cout << "Which card would you like to play?" << endl;
 		cin >> card_to_play;
 		card_to_play--;
 
-		if(card_is_good(card_to_play))
+		if(card_is_good(card_to_play, trick))
 		{
 		return hand[card_to_play];
 		}

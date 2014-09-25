@@ -25,6 +25,13 @@ public:
 	static string suitName (Suit s);
 	static string valueName (Value v);
 	string name() { return valueName (faceValue) + " of " + suitName(suit);}
+    bool operator == (Card c1) {
+		if ((c1.suit == suit) && (c1.faceValue == faceValue))
+		{
+			return true;
+		}
+		return false;
+	}
 private:
 		Suit suit;
 		Value faceValue;

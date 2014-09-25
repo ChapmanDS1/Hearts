@@ -11,6 +11,7 @@ public:
 	void addCardToHand(vector<Card> cards);
 	int getScore(){return score;}
 	void addScore(int points){score += points;}
+	bool playsFirst;
 private:
 	vector<Card> hand;
 	int score;

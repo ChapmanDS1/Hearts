@@ -1,5 +1,11 @@
 #include "Player.h"
 
+Player::Player()
+{
+	score = 0;
+	playsFirst = false;
+}
+
 void Player::display_hand()
 {
 	cout << "Your hand is: " << endl;
@@ -21,15 +27,16 @@ void Player::display_played_cards(vector<Card> trick)
 
 bool Player::card_is_good(int card_to_play, vector<Card> trick, bool heartsAreBroken)
 {
+	string s;
 	if (hand[card_to_play].getSuit() == trick[0].getSuit())
 		return true;
 
-	if ((trick.size() == 0) && (!heartsAreBroken) && hand[card_to_play].suitName == "heart" )
+	if ((trick.size() == 0) && (!heartsAreBroken) && hand[card_to_play].suitName(hand[card_to_play].getSuit()) == "heart" )
 		return false; 
 
 	for (size_t i = 0; i < hand.size(); i++)
 	{
-		if(hand[i].getSuit == trick[0].getSuit())
+		if(hand[i].getSuit() == trick[0].getSuit())
 			return false;
 	}
 
@@ -55,7 +62,7 @@ Card Player::play_a_card(vector<Card> trick, bool areHeartsBroken)
 		else
 		{
 			cout << "A different card must be played. Choose again. " << endl;
-			display_hand;
+			display_hand();
 		}
 	}while(1);
 }

@@ -13,6 +13,8 @@ public:
 	int getScore(){return score;}
 	void addScore(int points){score += points;}
 	Card play_a_card( vector<Card> trick, bool areHeartsBroken);
+	bool playsFirst;
+	Player();
 
 private:
 	int card_to_play;

@@ -72,7 +72,7 @@ vector<Card> Deck::deal()
 	vector<Card> hand;
 	for(int i = 0;i<(number_of_cards/4); i++)
 	{
-		hand.push_back(deck.begin);
+		hand.push_back(deck[0]);
 		deck.erase(deck.begin());
 	}
 

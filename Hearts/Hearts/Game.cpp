@@ -90,22 +90,22 @@ void Game::playHand()
 	if(searchFor2ofClubs(computer1))
 	{
 		computer1.playsFirst = true;
-		cout << "Player 2 goes first." << endl;
+		
 	}
 	if(searchFor2ofClubs(computer2))
 	{
 		computer2.playsFirst = true;
-		cout << "Player 3 goes first." << endl;
+		
 	}
 	if(searchFor2ofClubs(computer3))
 	{
 		computer3.playsFirst = true;
-		cout << "Player 4 goes first." << endl;
+		
 	}
 	if(searchFor2ofClubs(player1))
 	{
 		player1.playsFirst = true;
-		cout << "Player 1 goes first." << endl;
+	
 	}
 	
 
@@ -144,7 +144,7 @@ void Game::playHand()
 			cout << "Player score: " << player1.getScore() << endl;
 
 		}
-		else if(computer2.playsFirst = true)
+		/*else if(computer2.playsFirst = true)
 		{
 			computer2.playCard(trick);
 		}
@@ -155,7 +155,7 @@ void Game::playHand()
 		else if(player1.playsFirst = true)
 		{
 			player1.play_a_card(trick, areHeartsBroken);
-		}
+		}*/
 
 	}
 	

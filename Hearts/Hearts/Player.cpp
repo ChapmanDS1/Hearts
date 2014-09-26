@@ -1,3 +1,12 @@
+/* 
+ Author: Chris Delposen
+ Course: COMP 220, Computer Programming II 
+ Date: 20 September 2014
+ Description: This file defines the different parts of the player class.
+*/ 
+
+
+
 #include "Player.h"
 
 Player::Player()

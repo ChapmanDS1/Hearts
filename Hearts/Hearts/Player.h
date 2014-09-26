@@ -1,3 +1,11 @@
+/* 
+ Author: Chris Delposen
+ Course: COMP 220, Computer Programming II 
+ Date: 20 September 2014
+ Description: This file declares the nessesary parts of the player class.
+*/ 
+
+
 #include "Card.h"
 #include <vector>
 #include <iostream>

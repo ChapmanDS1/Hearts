@@ -1,3 +1,10 @@
+/*
+  File: Computer.cpp
+  Author:  Samuel Cooper
+  Course:  COMP 220, Computer Programming II
+  Date:    25 September, 2014
+  Description:  This file operates the AI.
+*/
 #include "Computer.h"
 
 Computer::Computer()

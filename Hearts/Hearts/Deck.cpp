@@ -62,15 +62,12 @@ void Deck::shuffle(int number)
 				deck[random1] = temp;
 			}
 		}
-		Card temp;
-		int random = (rand() % 50) + 1;
-		temp = deck[1];
-		deck[1] = deck[random];
-		deck[random] = temp;
-
+	
 	}
 
 }
+
+
 
 //Assumes that its dealing 13 cards for a 4 person game
 vector<Card> Deck::deal()

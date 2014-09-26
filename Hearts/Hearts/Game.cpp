@@ -46,8 +46,29 @@ void Game::playGame()
 	{
 		playHand();
 	}
-
+	cout << "Thank you for playing!" << endl;
 	return;
+}
+
+int Game::whoWon(vector<Card> trick)
+{
+	Suit s;
+	Value v;
+	Card Max;
+	int index = 0;
+	s = trick[0].getSuit();
+	v = trick[0].getValue();
+	Max = trick[0];
+	for(int i = 1; i < trick.size(); i++)
+	{
+		if((trick[i].getSuit() == s) && (trick[i].getValue() > v))
+		{
+			Max = trick[i];
+			index = i;
+		}
+	}
+	return index;
+
 }
 
 void Game::playHand()
@@ -83,12 +104,90 @@ void Game::playHand()
 	int number_of_rounds = 13; // Since each player has 13 cards and they play once per round their will be 13 rounds
 	for(int i = 0; i < number_of_rounds; i++)
 	{
-		
+		vector<Card> trick;
+		int player;
+		int points;
+		if(computer1.playsFirst = true)
+		{
+			trick.push_back(computer1.playCard(trick));
+			trick.push_back(computer2.playCard(trick));
+			trick.push_back(computer3.playCard(trick));
+			player1.play_a_card(trick, areHeartsBroken);
+			player = whoWon(trick);
+			points = howManyPoints(trick);
+			switch(player)
+			{
+				case 0:
+					computer1.addScore(points);
+					break;
+				case 1:
+					computer2.addScore(points);
+					break;
+				case 2:
+					computer3.addScore(points);
+					break;
+				case 3:
+					player1.addScore(points);
+					break;
+			}
+			cout << "Computer 1 score: " << computer1.getScore() << endl;
+			cout << "Computer 2 score: " << computer2.getScore() << endl;
+			cout << "Computer 3 score: " << computer3.getScore() << endl;
+			cout << "Player score: " << player1.getScore() << endl;
+
+		}
+		else if(computer2.playsFirst = true)
+		{
+			computer2.playCard(trick);
+		}
+		else if(computer3.playsFirst = true)
+		{
+			computer3.playCard(trick);
+		}
+		else if(player1.playsFirst = true)
+		{
+			player1.play_a_card(trick, areHeartsBroken);
+		}
 
 	}
-
+	
 	deck.refreshDeck();
-
+	if(player1.getScore() >= 100)
+	{
+		cout << "You lost!" << endl;
+		isGameOver = true;
+	}
+	if(computer1.getScore() >= 100)
+	{
+		cout << "You didn't lose!" << endl;
+		isGameOver = true;
+	}
+	if(computer2.getScore() >= 100)
+	{
+		cout << "You didn't lose!" << endl;
+		isGameOver = true;
+	}
+	if(computer3.getScore() >= 100)
+	{
+		cout << "You didn't lose!" << endl;
+		isGameOver = true;
+	}
 }
 
+int Game::howManyPoints(vector<Card> trick)
+{
+	int points = 0;
+	for(int i = 0; i < trick.size(); i++)
+	{
+		if(trick[i].getSuit() == 2)
+		{
+			points++;
+		}
+		if((trick[i].getSuit() == 3) && (trick[i].getValue() == 11))
+		{
+			points = points + 13;
+		}
+	}
+	return points;
+}
 

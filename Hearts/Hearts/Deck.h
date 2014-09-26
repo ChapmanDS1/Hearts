@@ -5,7 +5,8 @@ using std::vector;
 using std::rand;
 #include <ctime>
 using std::time;
-
+#include <iostream>
+using namespace std;
 class Deck{
 public:
 	Deck();

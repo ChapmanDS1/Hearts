@@ -62,6 +62,12 @@ void Deck::shuffle(int number)
 				deck[random1] = temp;
 			}
 		}
+		Card temp;
+		int random = (rand() % 50) + 1;
+		temp = deck[1];
+		deck[1] = deck[random];
+		deck[random] = temp;
+
 	}
 
 }
@@ -77,4 +83,22 @@ vector<Card> Deck::deal()
 	}
 
 	return hand;
+}
+
+void Deck::refreshDeck()
+{
+	int card = 0;
+	while(card < number_of_cards)
+	{
+		for(int i = clubs; i <= spades; i = i+1)
+		{
+			for(int j = deuce; j<= ace; j++)
+			{
+				
+				Card newCard(static_cast<Value>(j), static_cast<Suit>(i));
+				deck.push_back(newCard);
+				card++;
+			}
+		}
+	}
 }

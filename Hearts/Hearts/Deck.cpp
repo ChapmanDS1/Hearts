@@ -1,3 +1,10 @@
+/*
+  File: Deck.cpp
+  Author:  Daniel Chapman
+  Course:  COMP 220, Computer Programming II
+  Date:    25 September 2014
+  Description:  This provides the functionality for the deck, shuffle, deal, etc.
+*/
 #include "Deck.h"
 
 Deck::Deck()
